@@ -1,0 +1,381 @@
+* {
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+div#preloader { position: fixed; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: visible; background: #333 url('../asset/loading.gif') no-repeat center center; }
+
+#apps {
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 3s; /* Opera */
+    background-color: rgb(63,81,181);
+}
+#main-pages {
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -o-animation: fadein 3s; /* Opera */
+    background-color: rgb(63,81,181);
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.apps-layout {
+	background-color: rgb(63,81,181);
+}
+
+.apps-logo img {
+	height: 300px;
+    margin-left: 50px;
+
+}
+
+.devicename {
+    margin-left: 100px;
+    margin-top: 10%;
+    color: white;
+}
+.devicename span:first-child {
+    font-size: 20px;
+}
+.devicename #devicename {
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+
+    animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+
+    animation-duration:1s;
+    animation-delay: 1.5s
+}
+
+#main-pages {
+	display: none;
+	transition: all 1s;
+}
+
+.right {
+	float: right;
+}
+
+.apps-content {
+	width: 70%;
+	height: 80%;
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+    -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.apps-content.main-pages {
+	width: 50% !important;
+	right: 150px !important;
+}
+.apps-login {
+	width: 100%;
+}
+
+.mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../asset/welcome_card.jpg') center / cover;
+}
+.mdl-card__menu {
+  color: #fff;
+}
+
+.apps-login-form {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.mdl-textfield {
+	margin-right: 20px;
+}
+
+.apps-command {
+	width: 100%;
+    height: calc(73px - 40px);
+    background-color: white;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.apps-list-devices {
+	width: 100%;
+    background-color: white;
+    height: 76%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+#results {
+	border-bottom: 2px solid #3f51b5;
+    padding-bottom: 8px;
+    width: 83%;
+    margin-left: 20px;
+}
+#final_span {
+	font-size: 15pt;
+}
+#interim_span {
+	font-size: 15pt;
+}
+#hinttext_span {
+	color: #7b7b7b;
+    font-size: 15pt;
+}
+
+#start_button {
+	background-color: transparent;
+	border: none;
+	margin-bottom: 20px;
+    margin-right: 20px;
+    margin-top: -10px;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+  border: none;
+  padding: 0;
+}
+#start_button:focus {
+	border:none;
+	outline: none;
+	box-shadow: none;
+}
+
+.app-list-header {
+	padding: 15px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+}
+.app-list-header h3 {
+	line-height: 0;
+	font-size: 25px;
+}
+
+.app-list-content {
+	padding: 15px;
+    padding-bottom: 100px;
+}
+.mdl-snackbar {
+    bottom: 10px;
+}
+.icon-avatar {
+	font-size: 30px !important;
+    line-height: 40px !important;
+    text-align: center !important;
+}
+.device-on-icon {
+	background-color: #ff4081 !important;
+}
+.device-off-icon {background-color: #757575 !important;}
+
+.fab-button {
+    position: absolute;
+    right: 40px !important;
+    bottom: 40px !important;
+}
+
+dialog {
+	display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10%;
+    /*height: 150px;*/
+    background: white;
+    z-index: 999;
+    border: none;
+    padding: 20px;
+    box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-on-disable {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.20;
+    -moz-opacity: 20%;
+    -webkit-opacity: 20%;
+}
+
+.disable {
+    pointer-events: none;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+	  -moz-user-select: none;     /* Firefox all */
+	  -ms-user-select: none;      /* IE 10+ */
+	  user-select: none;          /* Likely future */  
+} 
+
+.tambahwidth {
+	width: 370px;
+}
+
+/* UX */
+
+/* Scroll bar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    background: #848484;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #848484;
+}
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+
+.hide-on-mobile {
+    display: block;
+}
+.show-on-mobile {
+    display: none;
+}
+
+/*
+	Responsive Design CSS
+*/
+@media only screen and (max-width: 836px) {
+	.apps-content.main-pages {
+		width: 90% !important;
+	    right: 0px !important;
+	    margin-left: 5%;
+	    margin-right: 5%;
+	}
+
+	.apps-content.login-pages {
+		width: 90% !important;
+	    right: 0px !important;
+	    margin-left: 5%;
+	    margin-right: 5%;
+	}
+
+	.apps-command {
+		padding-top: 15px;
+    	padding-bottom: 15px;
+        height: calc(73px - 30px);
+	}
+	#results {
+		width: 69%;
+	}
+	#start_button {
+		margin-right: 5px;
+	}
+	.mdl-list__item-text-body {
+		font-size: 12px !important;
+	}
+	.mdl-snackbar {
+	    bottom: 0;
+	}
+    .mdl-list__item--three-line {
+        height: 100px !important;
+    }
+
+    .fab-button {
+        right: 20px !important;
+        bottom: 20px !important;
+    }
+
+    .hide-on-mobile {
+        display: none !important;
+    }
+    .show-on-mobile {
+        display: block;
+    }
+
+    .devicename {
+        width: 100%;
+        height: 64px;
+        top: 0;
+        position: absolute;
+        left: 0;
+        background: #253694;
+        margin: 0;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        line-height: 64px;
+        padding-left: 25px;
+        vertical-align:middle;
+    }
+    .devicename span {
+        font-size: 17px !important;
+        display: inline-block;
+    }
+    .devicename span i { vertical-align: middle !important; }
+    #devicename {
+        font-weight: 600;
+    }
+
+    dialog { 
+ 		width: none !important;
+   	}
+}
+@media only screen and (min-width: 837px) {
+	dialog { 
+ 		width: 370px !important;
+   	}
+}
+
